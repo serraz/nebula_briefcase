@@ -1,6 +1,30 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local CaseMoney = 0
 local CaseData = {}
+local Props = {}
+
+-- Prop Creation Function
+CreateThread(function()
+    local ped = PlayerPedId()
+    local reqprop = QBCore.Functions.HasItem('briefcase')
+    While true do
+        if reqprop and not IsPedInAnyVehicle(ped) then
+            if not DoesEntityExist('prop_security_case_01') then
+                CreateObject('prop_security_case_01', GetEntityCoords(ped), true, false, false)
+                AttachEntityToEntity('prop_security_case_01', ped, GetPedBoneIndex(ped, 28422), 0.1, 0.0, -0.02, 0.0, -91.94, 62.0, 1, 1, 0, 1, 1, 1)
+                while not DoesEntityExist('prop_security_case_01') do Wait(1) end
+            end
+        elseif reqprop and IsPedInAnyVehicle(ped) then
+            Wait(300)
+            DetachEntity('prop_security_case_01')
+            DeleteObject('prop_security_case_01')
+        elseif not reqprop and DoesEntityExist('prop_security_case_01') then
+            DetachEntity('prop_security_case_01')
+            DeleteObject('prop_security_case_01')
+        end
+
+end)
+
 --MAIN BRIEFCASE MENU
 RegisterNetEvent('nebula_briefcase:client:casemenu', function(ItemData)
     CaseMoney = ItemData.info.cash
