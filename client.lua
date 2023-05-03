@@ -22,7 +22,7 @@ CreateThread(function()
             DetachEntity('prop_security_case_01')
             DeleteObject('prop_security_case_01')
         end
-
+   end
 end)
 
 --MAIN BRIEFCASE MENU
@@ -60,6 +60,7 @@ RegisterNetEvent('nebula_briefcase:client:casemenu', function(ItemData)
         },
     })
 end)
+
 --STORE MONEY IN BRIEFCASE
 RegisterNetEvent('nebula_briefcase:client:storemoney',function()
 
@@ -92,6 +93,7 @@ RegisterNetEvent('nebula_briefcase:client:storemoney',function()
   end
  end
 end)
+
 --TAKE MONEY OUT
 RegisterNetEvent('nebula_briefcase:client:removemoney',function()
 
