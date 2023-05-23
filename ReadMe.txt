@@ -1,3 +1,7 @@
+Briefcase script designed to enhance your roleplay. When you hold the item it will be in your hand and when you use it you can store money in the briefcase. The money is stored as metadata so the briefcase is transferable between players.
+
+NOTE: QB Only
+
 Step1. Add the following to qb-inventory\server\server.lua under harness
 
 			    elseif itemData["name"] == "briefcase" then
