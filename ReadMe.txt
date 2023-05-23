@@ -2,6 +2,8 @@ Briefcase script designed to enhance your roleplay. When you hold the item it wi
 
 NOTE: QB Only
 
+For support and to see our other scrips join the discord at https://discord.nebuladesigns.dev/
+
 Step1. Add the following to qb-inventory\server\server.lua under harness
 
 			    elseif itemData["name"] == "briefcase" then
