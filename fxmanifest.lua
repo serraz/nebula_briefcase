@@ -6,16 +6,20 @@ author 'serraz%1337'
 
 description 'serraz creations'
 
-version '1'
+version '1.5'
 
 lua54 'yes'
 
 
-server_scripts {
-    'server.lua',
-}
-client_scripts {
-    'client.lua',
+client_script { 
+    'client/main.lua',
+    'client/sd-menu.lua',
+
 }
 
-shared_script '@ox_lib/init.lua'
+server_script {
+    'server/main.lua',
+    '@oxmysql/lib/MySQL.lua',
+}
+
+shared_script 'config.lua'

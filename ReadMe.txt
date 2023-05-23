@@ -4,12 +4,16 @@ NOTE: QB Only
 
 For support and to see our other scrips join the discord at https://discord.nebuladesigns.dev/
 
-Step1. Add the following to qb-inventory\server\server.lua under harness
+Step1. Set the config to use your desired menu
+
+Step2. Add the following to qb-inventory\server\server.lua under harness
 
 			    elseif itemData["name"] == "briefcase" then
 				    info.cash = 0
 
-Step2. add the following to qb-core\shared\items.lua
+Step3. add the following to qb-core\shared\items.lua
 
    --CASHBRIEFCASE
    ["briefcase"]		= {["name"] = "briefcase",		   ["label"] = "Briefcase",		       ["weight"] = 1000,	 ["type"] = "item",	   ["image"] = "briefcase.png",	           ["unique"] = true,	   ["useable"] = true,	   ["shouldClose"] = true,	 ["combinable"] = nil,	   ["description"] = "A briefcase full of money?."},
+
+Special thanks to SloppyDesigns as this script is using sd-menu for out menus. (https://github.com/SloppyDesigns/sd-menu)
